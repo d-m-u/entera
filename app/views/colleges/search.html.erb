@@ -1,0 +1,15 @@
+<div class="container">
+  <div class="row mt-5">
+    <div class="col-lg-6">
+      <h4>College Info</h4>
+      <dl>
+        <% @colleges.each do |college| %>
+          <dt><%= college['school.name'] %></dt>
+            <p>
+              <%= image_tag "https://maps.googleapis.com/maps/api/staticmap?zoom=17&size=400x300&center=#{college['location.lat']},#{college['location.lon']}&key=#{GOOGLE_MAPS_API_KEY}", alt: "college map" %>
+            </p>
+        <% end %>
+      </dl>
+    </div>
+  </div>
+</div>
